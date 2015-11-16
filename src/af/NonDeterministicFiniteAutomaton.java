@@ -12,17 +12,17 @@ import java.util.List;
  * @author m
  */
 public class NonDeterministicFiniteAutomaton {
-    List<State> states;
+    List<State> nonDeterministicStates;
     
-    public NonDeterministicFiniteAutomaton(List<State> states){
-        this.states = states;
+    public NonDeterministicFiniteAutomaton(List<State> nonDeterministicStates){
+        this.nonDeterministicStates = nonDeterministicStates;
     }
     
     /**
-     * A string array containing [alphabet, initialState, states, transitions, acceptationStates]
+     * A list of states containing
      * @return A string array containing [alphabet, initialState, states, transitions, acceptationStates]
      */
-    public List[] getDeterministicAutomaton(){
+    public List<State> getDeterministicAutomaton(){
         
         // TODO
 //        if (containsVoidTransitions()) {

@@ -30,6 +30,38 @@ public class FiniteAutomatonUtil {
         return false;
     }
     
+    public static boolean isVoidTransitionPresent(List<State> nonDeterministicStates){
+        for (State st : nonDeterministicStates) {
+            Map<String, List<State>> trans = st.getTransitions();
+            
+            for (String key : trans.keySet()) {
+                if (key.equals(VOID_TRANSITION) && !isEmpty(trans.get(key))) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Validates if the <code>List</code> is null or empty.
+     * @param list
+     * @return <code>True</code> if <code>List</code> is empty or null; otherwise <code>False</code>.
+     */
+    public static boolean isEmpty(List list){
+        return list == null || list.isEmpty();
+    }
+    
+    /**
+     * Validates if the <code>String</code> is null or empty.
+     * @param str
+     * @return <code>True</code> if <code>String</code> is empty or null; otherwise <code>False</code>.
+     */
+    public static boolean isEmpty(String str){
+        return str == null || str.isEmpty();
+    }
+    
     
     /**
      * TODO remove. Think this is not necessary anymore, leaving it for a moment just in case.

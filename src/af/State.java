@@ -5,10 +5,8 @@
  */
 package af;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import static util.FiniteAutomatonUtil.getLetterPosition;
 
 /**
  *
@@ -18,12 +16,14 @@ public class State {
     
     private boolean acceptationState = false;
     private boolean initialState = false;
+    private boolean finalState = false;
     private String state = null;
     private Map<String, List<State>> transitions;
     
-    public State(boolean acceptationState, boolean initialState, String state, Map<String, List<State>> transitions){
+    public State(boolean acceptationState, boolean initialState, boolean finalState, String state, Map<String, List<State>> transitions){
         this.acceptationState = acceptationState;
         this.initialState = initialState;
+        this.finalState = finalState;
         this.state = state;
         this.transitions = transitions;
     }
@@ -55,5 +55,11 @@ public class State {
     public Map<String, List<State>> getTransitions() {
         return transitions;
     }
-    
+
+    /**
+     * @return the finalState
+     */
+    public boolean isFinalState() {
+        return finalState;
+    }    
 }
