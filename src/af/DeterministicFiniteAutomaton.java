@@ -9,13 +9,20 @@ package af;
  *
  * @author m
  */
-public class DeterministicFinateAutomaton {
+public class DeterministicFiniteAutomaton {
     private String initialState = null;
     private String[] alphabet = null;
     private String[] states = null;
     private String[] transitions = null;
     private String[] acceptationStates = null;
     
+    public DeterministicFiniteAutomaton(String initialState, String[] alphabet, String[] states, String[] transitions, String[] acceptationStates){
+        this.initialState = initialState;
+        this.alphabet = alphabet;
+        this.states = states;
+        this.transitions = transitions;
+        this.acceptationStates = acceptationStates;
+    }
     
     public String[] getMinimizedAutomaton(){
         // TODO
