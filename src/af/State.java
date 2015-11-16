@@ -16,16 +16,44 @@ import static util.FiniteAutomatonUtil.getLetterPosition;
  */
 public class State {
     
-    public boolean acceptation = false;
-    public boolean initialState = false;
-    public String state = null;
-    public Map<String, List<State>> transitions;
+    private boolean acceptationState = false;
+    private boolean initialState = false;
+    private String state = null;
+    private Map<String, List<State>> transitions;
     
-    public State(boolean acceptation, boolean initialState, String state, Map<String, List<State>> transitions){
-        this.acceptation = acceptation;
+    public State(boolean acceptationState, boolean initialState, String state, Map<String, List<State>> transitions){
+        this.acceptationState = acceptationState;
         this.initialState = initialState;
         this.state = state;
         this.transitions = transitions;
+    }
+
+    /**
+     * @return the acceptationState
+     */
+    public boolean isAcceptationState() {
+        return acceptationState;
+    }
+
+    /**
+     * @return the initialState
+     */
+    public boolean isInitialState() {
+        return initialState;
+    }
+
+    /**
+     * @return the state
+     */
+    public String getState() {
+        return state;
+    }
+
+    /**
+     * @return the transitions
+     */
+    public Map<String, List<State>> getTransitions() {
+        return transitions;
     }
     
 }

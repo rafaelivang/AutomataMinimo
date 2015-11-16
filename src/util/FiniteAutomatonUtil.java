@@ -7,6 +7,7 @@ package util;
 
 import af.State;
 import java.util.List;
+import java.util.Map;
 import static util.FiniteAutomatonConstants.VOID_TRANSITION;
 
 /**
@@ -15,10 +16,17 @@ import static util.FiniteAutomatonConstants.VOID_TRANSITION;
  */
 public class FiniteAutomatonUtil {
     
-    public static boolean isDeterministic(List<State> states){
+    public static boolean isNonDeterministic(List<State> states){
         for (State st : states) {
-            // TODO determine if is deterministic
+            Map<String, List<State>> trans = st.getTransitions();
+            
+            for (String key : trans.keySet()) {
+                if (key.equals(VOID_TRANSITION) || trans.get(key).size() > 1) {
+                    return true;
+                }
+            }
         }
+        
         return false;
     }
     
