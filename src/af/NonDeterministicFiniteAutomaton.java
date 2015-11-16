@@ -33,7 +33,7 @@ public class NonDeterministicFiniteAutomaton {
      * A string array containing [alphabet, initialState, states, transitions, acceptationStates]
      * @return A string array containing [alphabet, initialState, states, transitions, acceptationStates]
      */
-    public String[] getDeterministicAutomaton(){
+    public List[] getDeterministicAutomaton(){
         
         if (containsVoidTransitions()) {
             // TODO
