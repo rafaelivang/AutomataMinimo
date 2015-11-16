@@ -49,7 +49,7 @@ public class NonDeterministicFiniteAutomaton {
      * @return δ table
      */
     private String[][] getFirstTable(){
-        List<String>[][] firstTable = new ArrayList[states.length][alphabet.length];
+        String[][] firstTable = new String[states.length][alphabet.length];
         
         for (int idx = 0; idx < states.length; idx++) {
             String state = states[idx];
@@ -57,7 +57,10 @@ public class NonDeterministicFiniteAutomaton {
                 String[] sTns = trans.split(",");
                 if (sTns[0].equals(state)) {
                     int letPos = getLetterPosition(sTns[1]);
-//                    firstTable[idx][letPos] = sTns[2];
+                    if (firstTable[idx][letPos] == null || firstTable[idx][letPos].isEmpty()) {
+                        
+                    }
+                    firstTable[idx][letPos] = sTns[2];
                 }
             }
         }
