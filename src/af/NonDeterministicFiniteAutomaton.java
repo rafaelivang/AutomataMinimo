@@ -5,7 +5,6 @@
  */
 package af;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,42 +40,6 @@ public class NonDeterministicFiniteAutomaton {
         
         // TODO
         return null;
-    }
-    
-        
-    /**
-     * δ table
-     * @return δ table
-     */
-    private String[][] getFirstTable(){
-        String[][] firstTable = new String[states.length][alphabet.length];
-        
-        for (int idx = 0; idx < states.length; idx++) {
-            String state = states[idx];
-            for (String trans : transitions) {
-                String[] sTns = trans.split(",");
-                if (sTns[0].equals(state)) {
-                    int letPos = getLetterPosition(sTns[1]);
-                    if (firstTable[idx][letPos] == null || firstTable[idx][letPos].isEmpty()) {
-                        
-                    }
-                    firstTable[idx][letPos] = sTns[2];
-                }
-            }
-        }
-        return null;
-//        return firstTable;
-    }
-    
-    private int getLetterPosition(String let){
-        for (int i = 0; i < alphabet.length; i++) {
-            String letter = alphabet[i];
-            if (letter.equals(let)) {
-                return i;
-            }
-        }
-        
-        return -1;
     }
     
     private boolean containsVoidTransitions(){
