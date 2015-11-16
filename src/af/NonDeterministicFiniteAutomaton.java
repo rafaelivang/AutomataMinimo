@@ -14,8 +14,6 @@ import java.util.List;
 public class NonDeterministicFiniteAutomaton {
     List<State> states;
     
-    private final String VOID_TRANSITION = "ε";
-    
     public NonDeterministicFiniteAutomaton(List<State> states){
         this.states = states;
     }
