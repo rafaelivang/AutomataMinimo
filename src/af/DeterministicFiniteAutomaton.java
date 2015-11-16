@@ -5,23 +5,17 @@
  */
 package af;
 
+import java.util.List;
+
 /**
  *
  * @author m
  */
 public class DeterministicFiniteAutomaton {
-    private String initialState = null;
-    private String[] alphabet = null;
-    private String[] states = null;
-    private String[] transitions = null;
-    private String[] acceptationStates = null;
+    private List<State> states = null;
     
-    public DeterministicFiniteAutomaton(String initialState, String[] alphabet, String[] states, String[] transitions, String[] acceptationStates){
-        this.initialState = initialState;
-        this.alphabet = alphabet;
+    public DeterministicFiniteAutomaton(List<State> states){
         this.states = states;
-        this.transitions = transitions;
-        this.acceptationStates = acceptationStates;
     }
     
     public String[] getMinimizedAutomaton(){

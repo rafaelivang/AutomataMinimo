@@ -12,20 +12,12 @@ import java.util.List;
  * @author m
  */
 public class NonDeterministicFiniteAutomaton {
-    private String initialState = null;
-    private String[] alphabet = null;
-    private String[] states = null;
-    private String[] transitions = null;
-    private String[] acceptationStates = null;
+    List<State> states;
     
     private final String VOID_TRANSITION = "ε";
     
-    public NonDeterministicFiniteAutomaton(String initialState, String[] alphabet, String[] states, String[] transitions, String[] acceptationStates){
-        this.initialState = initialState;
-        this.alphabet = alphabet;
+    public NonDeterministicFiniteAutomaton(List<State> states){
         this.states = states;
-        this.transitions = transitions;
-        this.acceptationStates = acceptationStates;
     }
     
     /**
@@ -34,21 +26,12 @@ public class NonDeterministicFiniteAutomaton {
      */
     public List[] getDeterministicAutomaton(){
         
-        if (containsVoidTransitions()) {
-            // TODO
-        }
+        // TODO
+//        if (containsVoidTransitions()) {
+//            // TODO
+//        }
         
         // TODO
         return null;
-    }
-    
-    private boolean containsVoidTransitions(){
-        for (String sTmp : transitions) {
-            return sTmp.contains(VOID_TRANSITION);
-        }
-        
-        return false;
-    }
-    
-    
+    }    
 }
