@@ -6,6 +6,7 @@
 package af;
 
 import java.util.List;
+import static util.FiniteAutomatonUtil.isVoidTransitionPresent;
 
 /**
  *
@@ -19,17 +20,17 @@ public class NonDeterministicFiniteAutomaton {
     }
     
     /**
-     * A list of states containing
+     * A list of <code>State</code> containing a Deterministic Automaton
      * @return A string array containing [alphabet, initialState, states, transitions, acceptationStates]
      */
     public List<State> getDeterministicAutomaton(){
+        if (isVoidTransitionPresent(nonDeterministicStates)) {
+            // TODO get allep zero table
+        }
         
-        // TODO
-//        if (containsVoidTransitions()) {
-//            // TODO
-//        }
+        // TODO  get delta table
+        // TODO  Create AFD
         
-        // TODO
         return null;
     }    
 }
